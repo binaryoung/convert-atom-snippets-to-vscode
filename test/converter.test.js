@@ -227,3 +227,16 @@ test('Test with combine option', t => {
 
   fs.unlinkSync(path.join(__dirname, './store/output/snippets.json'))
 })
+
+test('Output dir do not exist', t => {
+  new Converter('store/async.cson', 'store/dirDoNotExits', __dirname).convert()
+  let convertedFile = fs.readFileSync(
+    path.join(__dirname, './store/converted/async.json')
+  )
+  let file = fs.readFileSync(
+    path.join(__dirname, 'store/dirDoNotExits/async.json')
+  )
+  t.deepEqual(file, convertedFile)
+  fs.unlinkSync(path.join(__dirname, 'store/dirDoNotExits/async.json'))
+  fs.rmdirSync(path.join(__dirname, 'store/dirDoNotExits'))
+})

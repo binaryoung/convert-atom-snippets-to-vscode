@@ -36,6 +36,7 @@ class Converter {
       .filter(value => typeof value !== 'undefined')
   }
   writeSnippets() {
+    if (!fs.existsSync(this.outputPath)) fs.mkdirSync(this.outputPath)
     Object.keys(this.snippets).forEach(function(key) {
       let snippetPath = path.join(this.outputPath, key + '.json')
       CSON.writeFileSync(snippetPath, this.snippets[key])
