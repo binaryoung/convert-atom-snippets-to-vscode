@@ -2,6 +2,7 @@
 
 const commander = require('commander')
 const process = require('process')
+const fs = require('fs')
 const Converter = require('./converter')
 
 commander
