@@ -12,11 +12,12 @@ commander
   .action(function(snippetPath, outputPath, options) {
     if (
       typeof outputPath === 'undefined' ||
-      !fs.statSync(outputPath).isDirectory()
+      (fs.existsSync(outputPath) && !fs.statSync(outputPath).isDirectory())
     ) {
       outputPath = process.cwd()
     }
     let { combine = false } = options
     new Converter(snippetPath, outputPath, process.cwd()).convert(combine)
+    console.log('Conversion is complete.Enjoy :)')
   })
   .parse(process.argv)
