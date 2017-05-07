@@ -1,6 +1,6 @@
 {
   "name": "convert-atom-snippets-to-vscode",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert atom snippets to vscode format.",
   "keywords": [
     "snippets",
