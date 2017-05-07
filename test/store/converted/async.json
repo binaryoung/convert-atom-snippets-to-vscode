@@ -1,0 +1,32 @@
+{
+  "Node callback": {
+    "prefix": "cb",
+    "body": "function (err, ${1:value}) {${0}}",
+    "description": "Node callback"
+  },
+  "Promise": {
+    "prefix": "p",
+    "body": "new Promise((resolve, reject) => {\n\t${0}\n})",
+    "description": "Promise"
+  },
+  "Promise.then": {
+    "prefix": "then",
+    "body": "${1:promise}.then(${2:value} => {\n\t${0}\n});",
+    "description": "Promise.then"
+  },
+  "chain then": {
+    "prefix": ".then",
+    "body": ".then(${1:value} => {${0}})",
+    "description": "chain then"
+  },
+  "Promise.catch": {
+    "prefix": "catch",
+    "body": "${1:promise}.catch(${2:err} => {\n\t${0}\n});",
+    "description": "Promise.catch"
+  },
+  "chain catch": {
+    "prefix": ".catch",
+    "body": ".catch(${1:err} => {${0}})",
+    "description": "chain catch"
+  }
+}

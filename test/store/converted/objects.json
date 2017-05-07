@@ -1,0 +1,47 @@
+{
+  "key/value pair": {
+    "prefix": ":",
+    "body": "${1:key}: ${2:'value'}",
+    "description": "key/value pair"
+  },
+  "method": {
+    "prefix": "m",
+    "body": "${1:method}(${2:arguments}) {\n\t${0}\n}",
+    "description": "method"
+  },
+  "getter": {
+    "prefix": "get",
+    "body": "get ${1:property}() {\n\t${0}\n}",
+    "description": "getter"
+  },
+  "setter": {
+    "prefix": "set",
+    "body": "set ${1:property}(${2:value}) {\n\t${0}\n}",
+    "description": "setter"
+  },
+  "getter + setter": {
+    "prefix": "gs",
+    "body": "get ${1:property}() {\n\t${0}\n}\nset ${1:property}(${2:value}) {\n\t\n}",
+    "description": "getter + setter"
+  },
+  "prototype method": {
+    "prefix": "proto",
+    "body": "${1:Class}.prototype.${2:method} = function (${3:arguments}) {\n\t${0}\n};",
+    "description": "prototype method"
+  },
+  "chain prototype method": {
+    "prefix": ".proto",
+    "body": ".prototype.${2:methodName} = function (${3:arguments}) {\n\t${0}\n}",
+    "description": "chain prototype method"
+  },
+  "Object.assign": {
+    "prefix": "a",
+    "body": "Object.assign(${1:dest}, ${2:source})",
+    "description": "Object.assign"
+  },
+  "Object.assign copy": {
+    "prefix": "ac",
+    "body": "Object.assign({}, ${1:original}, ${2:source})",
+    "description": "Object.assign copy"
+  }
+}

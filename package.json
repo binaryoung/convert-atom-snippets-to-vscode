@@ -1,0 +1,27 @@
+{
+  "name": "convert-atom-snippets-to-vscode",
+  "version": "1.0.0",
+  "description": "Convert atom snippets to vscode format.",
+  "keywords": [
+    "snippets",
+    "convert",
+    "atom",
+    "vscode"
+  ],
+  "author": "young",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "season": "^6.0.0"
+  },
+  "scripts": {
+    "convertSnippets": "node ./src/command.js",
+    "test": "ava"
+  },
+  "bin": {
+    "convertSnippets": "./src/command.js"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1"
+  }
+}
