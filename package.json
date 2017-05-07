@@ -8,7 +8,18 @@
     "atom",
     "vscode"
   ],
-  "author": "young",
+  "author": {
+    "name": "young",
+    "homepage": "http://xiayang.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/binaryoung/convert-atom-snippets-to-vscode.git"
+  },
+  "homepage": "https://github.com/binaryoung/convert-atom-snippets-to-vscode",
+  "bugs": {
+    "url": "https://github.com/binaryoung/convert-atom-snippets-to-vscode/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "commander": "^2.9.0",

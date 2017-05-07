@@ -6,7 +6,7 @@ I used to use Atom as my editor,but now vscode is my favourite.But i also have s
 
 ## Installationfeat
     $ npm install convert-atom-snippets-to-vscode -g
-&&
+or
 
     $ yarn global add convert-atom-snippets-to-vscode
 
