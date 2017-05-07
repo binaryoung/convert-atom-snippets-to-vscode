@@ -208,3 +208,22 @@ test('Convert from absolute dir with relative output dir', t => {
   fs.unlinkSync(path.join(__dirname, './store/output/async.json'))
   fs.unlinkSync(path.join(__dirname, './store/output/objects.json'))
 })
+
+test('Test with combine option', t => {
+  new Converter(
+    'store',
+    path.join(__dirname, 'store/output'),
+    __dirname
+  ).convert(true)
+  let combineFile = fs.readFileSync(
+    path.join(__dirname, './store/converted/combine.json')
+  )
+
+  let combineSnippet = fs.readFileSync(
+    path.join(__dirname, './store/output/snippets.json')
+  )
+
+  t.deepEqual(combineSnippet, combineFile)
+
+  fs.unlinkSync(path.join(__dirname, './store/output/snippets.json'))
+})

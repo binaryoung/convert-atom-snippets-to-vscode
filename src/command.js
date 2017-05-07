@@ -8,13 +8,15 @@ const Converter = require('./converter')
 commander
   .version('1.0.0')
   .arguments('<snippetPath> [outputPath]')
-  .action(function(snippetPath, outputPath) {
+  .option('-c, --combine', 'Combine Snippets')
+  .action(function(snippetPath, outputPath, options) {
     if (
       typeof outputPath === 'undefined' ||
       !fs.statSync(outputPath).isDirectory()
     ) {
       outputPath = process.cwd()
     }
-    new Converter(snippetPath, outputPath, process.cwd()).convert()
+    let { combine = false } = options
+    new Converter(snippetPath, outputPath, process.cwd()).convert(combine)
   })
   .parse(process.argv)

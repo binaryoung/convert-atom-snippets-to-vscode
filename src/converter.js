@@ -41,12 +41,21 @@ class Converter {
       CSON.writeFileSync(snippetPath, this.snippets[key])
     }, this)
   }
-  convert() {
+  combine() {
+    let snippet = {}
+    Object.keys(this.snippets).forEach(key => {
+      snippet = Object.assign(snippet, this.snippets[key])
+    }, this)
+    this.snippets = []
+    this.snippets.snippets = snippet
+  }
+  convert(combine = false) {
     this.snippetsPath.forEach(function(snippetPath) {
       let vscodeSnippet = new Snippet(snippetPath).convert()
       let name = path.parse(snippetPath).name
       this.snippets[name] = vscodeSnippet
     }, this)
+    if (combine) this.combine()
     this.writeSnippets()
   }
 }

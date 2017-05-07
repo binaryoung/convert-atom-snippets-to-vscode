@@ -12,11 +12,13 @@ or
 
 ## Usage
 ### Command 
-    convertSnippets <snippets> [output]
+    convertSnippets <snippets> [output] -c, --combine
 ### snippets 
 Atom snippets path,absolute or relative path,dir.e.g: `~/snippets`, `D:\someAtomSnippet.cson`,  `./snippets/fooSnippets.cson`
 ### output 
 Target dir to save converted snippets.Absolute or relative path is both well.e.g:`./snippets`, `D:\snippets`
+### combine
+Whether to combine all snippets to single snippet file.
 ### notice
 The relative path will relative to the path you run the command.
 
